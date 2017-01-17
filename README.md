@@ -20,4 +20,4 @@ Jersey do not provide ejb lookup by default
 ## About this sample
 Was implemented as easy as possible, there are a lot of tecnologies used and a great content of knowlege envolved ...  <br />
 try make to make a Java Sênior Developer pratical article and you see... the content that i provide is the best.  <br />
-this sample can be utilized as model to implement Jee enterprise web applications using some of best java ee practices <br />
+this sample can be utilized as model to implement Jee enterprise web applications using some of best java ee practices
