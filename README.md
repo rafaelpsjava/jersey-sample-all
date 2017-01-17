@@ -1,7 +1,6 @@
-﻿## Author of this project : Rafael Peres dos Santos - Senior Developer and Java Architect ( even not certified yet ), 10 years of experience and has these Java certifications:  <br />
-Sun Certified Java Programmer, <br />
-Web Component Developer, <br />
-Business Component Developer <br />
+﻿## Author of this project : Rafael Peres dos Santos - Senior Developer and Java Architect ( even not certified yet ), 10 years of experience and has these Java certifications: <br />  
+ 
+ Sun Certified Java Programmer, Web Component Developer, Business Component Developer
 
 ## This is a practical tecnical article for Senior Developer of how to build an enterprise java project using the best practices, was created in less than week. 
 Only one layer is just the skelleton for the implementation even the other is just a sample of how to architect <br />
