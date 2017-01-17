@@ -9,13 +9,13 @@ Layer = project<br />
 Ejb-embedded-container is coupled with jee server and a minimal change in maven dependencies of project can stop it working. <br />
 Use Jax-RS web service facade Instead of ejb-embedded-container; <br />
 and invoke the ejb method(s) and implement a test case that use a restful client api. <br />
-## ./tecnologies-description/multiple-projects 
+## ./readme/tecnologies-description/multiple-projects 
 this ilustrate this project structure
-## ./tecnologies-description/about-restful-providers 
+## ./readme/tecnologies-description/about-restful-providers 
 this will give a few descriptions (what they offer) of the best current restful providers
-## ./tecnologies-description/oauth 
+## ./readme/tecnologies-description/oauth 
 a few instructions of what is necessary to config the oauth 
-## ./tecnologies_used_in_this_project 
+## ./readme/tecnologies_used_in_this_project 
 tecnologies and knowleges used in this sample project
 ## ./tutorial/jersey/ejb_lookup
 Jersey do not provide ejb lookup by default
