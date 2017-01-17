@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>sample</groupId>
+		<artifactId>jersey-sample-all</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>projectName-ejb</artifactId>
+
+	<dependencies>
+		<!-- project -->
+		<dependency>
+			<groupId>sample</groupId>
+			<artifactId>projectName-domain</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sample</groupId>
+			<artifactId>projectName-ejb-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sample</groupId>
+			<artifactId>projectName-exception-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sample</groupId>
+			<artifactId>projectName-util</artifactId>
+		</dependency>
+
+		<!-- persistence -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+		</dependency>
+
+		<!-- ejb -->
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>javax.ejb-api</artifactId>
+		</dependency>
+
+		<!-- ejb container -->
+		<dependency>
+			<groupId>org.jboss.as</groupId>
+			<artifactId>jboss-as-embedded</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.logmanager</groupId>
+			<artifactId>jboss-logmanager</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jboss-vfs</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
+	<developers>
+		<developer>
+			<name>Rafael Peres dos Santos</name>
+		</developer>
+	</developers>
+</project>

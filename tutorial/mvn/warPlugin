@@ -1,0 +1,18 @@
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+
+				<configuration>
+					<!-- <archive> -->
+					<!-- <manifestEntries> -->
+					<!-- <Dependencies> -->
+					<!-- org.infinispan,org.hibernate -->
+					<!-- </Dependencies> -->
+					<!-- </manifestEntries> -->
+					<!-- </archive> -->
+
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>

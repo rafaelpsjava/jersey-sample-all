@@ -1,0 +1,16 @@
+<hibernate-mapping>
+<!--     <class name="br.com.sample.User" table="User" ...> -->
+<!--         <id name="userId" type="java.lang.Integer"> -->
+<!--             <column name="STOCK_ID" /> -->
+<!--             <generator class="identity" /> -->
+<!--         </id> -->
+<!--         <property name="stockCode" type="string"> -->
+<!--             <column name="STOCK_CODE" length="10" not-null="true" unique="true" /> -->
+<!--         </property> -->
+<!--     </class> -->
+
+    <query name="findUserByName">
+        <![CDATA[from br.com.domain.sample.App a where a.name = :name]]>
+    </query>
+
+</hibernate-mapping>

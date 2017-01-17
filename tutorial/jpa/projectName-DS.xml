@@ -1,0 +1,49 @@
+<datasources>
+	
+	<datasource jta="true" jndi-name="java:/jerseysampleDS" pool-name="MysqlDS" enabled="true" use-java-context="true" use-ccm="true">
+		<connection-url>jdbc:mysql://localhost:3306/jerseysample</connection-url>
+		<driver>mysqlXA</driver>
+		<transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
+		<pool>
+			<min-pool-size>1</min-pool-size>
+			<max-pool-size>111</max-pool-size>
+			<prefill>true</prefill>
+			<use-strict-min>false</use-strict-min>
+			<flush-strategy>FailingConnectionOnly</flush-strategy>
+		</pool>
+		
+		<security>
+			<user-name>root</user-name>
+			<password>admin</password>
+		</security>
+	
+		<statement>
+			<prepared-statement-cache-size>31</prepared-statement-cache-size>
+		</statement>
+	</datasource>
+		
+		
+		
+	<datasource jta="true" jndi-name="java:/ejbSampleInWebProjectDS" pool-name="MysqlDS" enabled="true" use-java-context="true" use-ccm="true">
+		<connection-url>jdbc:mysql://localhost:3306/jerseysample</connection-url>
+		<driver>mysqlXA</driver>
+		<transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
+		<pool>
+			<min-pool-size>1</min-pool-size>
+			<max-pool-size>111</max-pool-size>
+			<prefill>true</prefill>
+			<use-strict-min>false</use-strict-min>
+			<flush-strategy>FailingConnectionOnly</flush-strategy>
+		</pool>
+		<security>
+			<user-name>root</user-name>
+			<password>admin</password>
+		</security>
+		<statement>
+			<prepared-statement-cache-size>31</prepared-statement-cache-size>
+		</statement>
+	</datasource>
+	
+	
+	
+</datasources>

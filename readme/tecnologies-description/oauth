@@ -1,0 +1,10 @@
+https://docs.stormpath.com/java/product-guide/latest/quickstart.html
+    Go to https://api.stormpath.com/register and complete the form.
+    You will receive a confirmation email with an activation link.
+    Once you click the link, Stormpath will create a Stormpath account along with a Tenant.
+     Your Tenant name will be a unique pair of two randomly-generated words separated by a hyphen (e.g. “iron-troop”).
+
+    In order to use the Stormpath API, you will need an API key. To get one, follow these steps:
+
+    On the right side of the Admin Console, under “Developer Tools”, click the “Create API Key” button.
+    A dialog box will come up, with additional information about the key. You will now be able to download your key in the form of a apiKey-{API_KEY_ID}.properties file. This file contains your Stormpath API Key information, which can be used to authenticate with the Stormpath API.

@@ -1,0 +1,85 @@
+<datasources>
+	<datasource jta="true" jndi-name="java:/jerseysampleDS" pool-name="MysqlDS" enabled="true" use-java-context="true" use-ccm="true">
+		<connection-url>jdbc:mysql://DATABASE_IP:DATABASE_PORT/DATABASE_NAME</connection-url>
+		<driver>mysqlXA</driver>
+		<transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
+		<pool>
+			<min-pool-size>5</min-pool-size>
+			<max-pool-size>10</max-pool-size>
+			<prefill>true</prefill>
+			<use-strict-min>false</use-strict-min>
+			<flush-strategy>FailingConnectionOnly</flush-strategy>
+		</pool>
+		<security>
+			<user-name>database-user-name</user-name>
+			<password>passw</password>
+		</security>
+		<statement>
+			<prepared-statement-cache-size>31</prepared-statement-cache-size>
+			<share-prepared-statements>false</share-prepared-statements>
+		</statement>
+	</datasource>
+	
+	<datasource jta="true" jndi-name="java:/ejbSampleInWebProjectDS" pool-name="MysqlDS" enabled="true" use-java-context="true" use-ccm="true">
+		<connection-url>jdbc:mysql://DATABASE_IP:DATABASE_PORT/DATABASE_NAME</connection-url>
+		<driver>mysqlXA</driver>
+		<transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
+		<pool>
+			<min-pool-size>5</min-pool-size>
+			<max-pool-size>10</max-pool-size>
+			<prefill>true</prefill>
+			<use-strict-min>false</use-strict-min>
+			<flush-strategy>FailingConnectionOnly</flush-strategy>
+		</pool>
+		<security>
+			<user-name>database-user-name</user-name>
+			<password>passw</password>
+		</security>
+		<statement>
+			<prepared-statement-cache-size>31</prepared-statement-cache-size>
+			<share-prepared-statements>false</share-prepared-statements>
+		</statement>
+	</datasource>
+	
+</datasources>
+
+<drivers>
+      <driver name="mysql" module="com.mysql">
+          <driver-class>com.mysql.jdbc.Driver</driver-class>
+      </driver>
+      <driver name="mysqlXA" module="com.mysql">
+          <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+      </driver>
+</drivers>
+
+<!-- 
+	download mysql-connector version: 5.1.x to 5.1.3x 
+	go to 
+	%JBOSS_HOME%/modules/com/mysql/main  ( if the directory does't create )
+	copy mysql-connector
+	create module.xml file with content:
+	
+	<?xml version="1.0" encoding="UTF-8"?>
+	<module xmlns="urn:jboss:module:1.0" name="com.mysql">
+	  <resources>
+	    <resource-root path="mysql-connector-java-5.1.27.jar"/>
+	  </resources>
+	  <dependencies>
+	    <module name="javax.api"/> 
+	    <module name="javax.transaction.api"/>
+		<module name="javax.servlet.api" optional="true"/>
+	  </dependencies>
+	</module>
+	
+	use drivers definition in datasourceName-DS.xml or 
+	edit %JBOSS_HOME%/standalone/configuration/standalone.xml
+	add <driver> tags inside <drivers> tag
+	  
+	  <driver name="mysql" module="com.mysql">
+          <driver-class>com.mysql.jdbc.Driver</driver-class>
+      </driver>
+      <driver name="mysqlXA" module="com.mysql">
+          <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+      </driver>	
+      
+-->

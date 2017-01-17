@@ -1,0 +1,38 @@
+		<!-- ejb container -->
+		<dependency>
+			<groupId>org.jboss.as</groupId>
+			<artifactId>jboss-as-embedded</artifactId>
+			<version>${jboss.as.embedded.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.logmanager</groupId>
+			<artifactId>jboss-logmanager</artifactId>
+			<version>${jboss.logmanager.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jboss-vfs</artifactId>
+			<version>${jboss.vfs.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+			<version>${jboss.logging.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		
+		
+		<!-- or --> 
+		
+		
+		
+		<!-- ejb container -->
+		<dependency>
+			<groupId>org.jboss.ejb3.embedded</groupId>
+			<artifactId>jboss-ejb3-embedded-standalone</artifactId>
+			<version>1.0.0-alpha-2</version>
+		</dependency>

@@ -1,0 +1,53 @@
+ // TOPIC-I use 
+ 	${project.parent.version} in versions of sub-projects of projectName-all that uses the same version of that 
+ 
+ // TOPIC-III 
+ 	use ${project.version} 	
+ 
+ // TOPIC-V use 
+	<parent>...</parent> // TOPIC-I 
+	<dependencies>...</dependencies> //  TOPIC-III 
+
+// 	TOPIC-X 
+ 	if the project use hibernate as persistence provider and need a projectName-query.xml(file) look at ./tutorial/hibernate-query.txt (sample file)
+
+// 	TOPIC-XI
+	<package>pom</pakage>
+	<modules>...<module>projectName-ejb</module><module>projectName-domain</module><module>projectName-util</module><module>projectName-web</module>...</modules>
+	<dependencyManagement> <dependencies> <dependency>...</dependency> </dependencies> </dependencyManagement>
+		
+// TOPIC-XIII
+	<jar-file>../lib/projectName-domain-${project.version}.jar</jar-file>
+	<mapping-file>projectName-query.xml</mapping-file>
+	// Can you use a lot of mapping-file for example one mapping-file per project subdivisions of activity 
+ 	for more details of the how to write persitence.xml look at tutorial/persistence.xml.txt
+ 
+projectName-all
+	pom.xml							// TOPIC-XI
+	
+	projectName-domain
+		pom.xml 					// TOPIC-V 
+
+	projectName-exception-util
+		pom.xml 					// TOPIC-V 
+
+	projectName-util
+		pom.xml 					// TOPIC-V 
+
+	projectName-ejb-util
+		pom.xml						// TOPIC-V 
+
+	projectName-ws
+		pom.xml						// TOPIC-V 
+
+	projectName-web
+		pom.xml						// TOPIC-V
+		src/main/WEB-INF
+			web.xml
+
+	projectName-ejb
+		src/main/resources/META-INF/
+			persistence.xml			// TOPIC XIII
+			projectName-query.xml  	// TOPIC X 
+		pom.xml						// TOPIC-V 	
+		

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure>
+
+	<!-- <jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2"> -->
+	<!-- just work in above versions of jboss -->
+	<!-- <exclude-subsystems> -->
+	<!-- <subsystem name="resteasy" /> -->
+	<!-- </exclude-subsystems> -->
+
+
+	<deployment>
+		<dependencies>
+			<module name="javax.api" />
+			<module name="javax.ejb.api" />
+			<module name="org.jboss.as.embedded" />
+			<module name="org.jboss.logmanager" />
+		</dependencies>
+
+		<exclusions>
+			<module name="javaee.api" />
+			<module name="javax.ws.rs.api" />
+			<module name="org.jboss.resteasy.resteasy-jaxrs" />
+			<!-- <module name="Classpath" /> -->
+		</exclusions>
+	</deployment>
+
+</jboss-deployment-structure>

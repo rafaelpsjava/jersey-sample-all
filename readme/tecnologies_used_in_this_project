@@ -1,0 +1,8 @@
+	Maven 3.x,
+	Mysql ( database ),
+	Jboss ( Java EE server ), 
+	Java EE Architeture Concepts,  
+	Java,
+	Java EE ( Ejb, JSP-Servlets ),
+	Oauth ( an 'hello world' authenticate with stormpath(an oauth framework) )
+	Jersey ( restful jax-rs web service )

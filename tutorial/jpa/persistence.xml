@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="projectNamePersistenceUnit" transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<!-- if the project has jta-datasource use -->
+		<jta-data-source>java:/projectNameDS</jta-data-source>
+		
+		<!-- if the project domain class are in a jar project use -->
+		<jar-file>../lib/projectName-domain-${project.version}.jar</jar-file>
+		<!-- if the project does't use the jar-file use <class>...</...> for all persistence classes -->
+		<class>packageOfClass.NameClass</class>
+		
+		<!-- if the project use name-query file(s) use the bellow line altering just the name of file for each query-file.xml -->
+		<mapping-file>META-INF/fileName-query.xml</mapping-file>
+		
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+		<properties>
+			<!-- 
+				hibernate.dialect 'is the way that the generate query by hibernate will look like'
+				DATABASE-DIALECT=org.hibernate.dialect.MySQL5InnoDBDialect
+			-->
+			<property name="hibernate.dialect" value="DATABASE-DIALECT" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop, update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.archive.autodetection" value="class, hbm, jar" />
+			
+			<!-- 
+				driver_class for mysql database 
+				FULL_DATABASE_DRIVER_CLASS_NAME=com.mysql.jdbc.Driver
+				each database has a diffent driver and package(s) that are used
+			
+			-->
+			<property name="hibernate.connection.driver_class" value="FULL_DATABASE_DRIVER_CLASS_NAME" />
+	
+			<property name="hibernate.cache.use_second_level_cache" value="false" />
+			<property name="hibernate.cache.use_query_cache" value="false" /> -->
+			<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+			
+			<!--
+				for most databases the ...url will look like this :
+					DATABASE-PROVIDER=mysql (just-altering the definitions ...)
+					DATABASE-IP=localhost -- for example or X.X.X.X
+					DATABASE-PORT=3306 -- mysql 
+					DATABASE-NAME=databaseName
+				
+				if the project does not data-source use the bellow lines	 
+			-->
+			<property name="hibernate.connection.url" value="jdbc:DATABASE-PROVIDER://DATABASE-IP:DATABASE-PORT/DATABASE-NAME" /> 
+			<property name="hibernate.connection.username" value="" /> 
+			<property name="hibernate.connection.password" value="" /> 
+		</properties>
+	</persistence-unit>
+
+</persistence>

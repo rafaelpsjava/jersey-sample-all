@@ -1,0 +1,156 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>projectName-web</artifactId>
+	<parent>
+		<groupId>sample</groupId>
+		<artifactId>jersey-sample-all</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<packaging>war</packaging>
+
+	<dependencies>
+		<!-- project -->
+		<dependency>
+			<groupId>sample</groupId>
+			<artifactId>projectName-domain</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sample</groupId>
+			<artifactId>projectName-exception-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sample</groupId>
+			<artifactId>projectName-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sample</groupId>
+			<artifactId>projectName-ejb-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sample</groupId>
+			<artifactId>projectName-ejb</artifactId>
+		</dependency>
+
+		<!-- jersey -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-moxy</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-server</artifactId>
+		</dependency>
+
+		<!-- oauth -->
+		<dependency>
+			<groupId>com.stormpath.sdk</groupId>
+			<artifactId>stormpath-sdk-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.stormpath.sdk</groupId>
+			<artifactId>stormpath-sdk-httpclient</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.stormpath.sdk</groupId>
+			<artifactId>stormpath-sdk-oauth</artifactId>
+		</dependency>
+
+		<!-- utils -->
+		<dependency>
+			<groupId>org.reflections</groupId>
+			<artifactId>reflections</artifactId>
+		</dependency>
+
+		<!-- javaee -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- ejb -->
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>javax.ejb-api</artifactId>
+		</dependency>
+
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<delete file="${jboss.deploy.directory}/projectName-web.war" />
+								<copy file="target/projectName-web.war" tofile="${jboss.deploy.directory}/projectName-web.war" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+		</resources>
+		<finalName>projectName-web</finalName>
+	</build>
+
+	<developers>
+		<developer>
+			<name>Rafael Peres dos Santos</name>
+		</developer>
+	</developers>
+
+</project>

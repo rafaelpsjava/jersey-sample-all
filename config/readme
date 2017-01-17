@@ -1,0 +1,58 @@
+-----------------------------------------------------------------------------
+DOWNLOAD MYSQL DATABASE OR ANOTHER DATABASE, AND INSTALL
+	IF THE PROJECT THE PROJECT USE MYSQL (INSTALL MYSQL-WORKBENCH create App table with 
+	./config/projectName-mysql-workench-project.mwb using msyql-workbench or manually)
+
+-----------------------------------------------------------------------------
+CONFIGURE JBOSS DATA SOURCE 
+
+edit projectName-DS.xml and read the instructions in this file
+
+copy projectName-DS.xml to %JBOSS_HOME%/standalone/deployments/
+
+start the jboss and look if was deployed
+------------------------------------------------------------------------------
+change the ./projectName-ejb/src/main/resources/META-INF/persistence.xml
+with the properties of database used
+
+if you like deploy projectName-web-all change the persistence.xml file with 
+the properties of database used.
+
+change the projectName-web-all/src/main/resources/META-INF/persistence.xml
+
+
+------------------------------------------------------------------------------
+Edit jersey-sample-all/pom.xml and jersey-sample-all/projectName-web-all/pom.xml
+change the <jboss.path> property with the path of jboss 7.1.1 
+
+
+------------------------------------------------------------------------------
+Deploy jersey-sample-all
+at the first time with: 
+mvn eclipse:clean eclipse:eclipse clean install 
+	(eclipse:clean exclude classpath and .project file(s)) 
+	(eclipse:eclipse will and create classpath and .project file(s))
+
+for each change in any artifact of any project use
+mvn clean install
+
+------------------------------------------------------------------------------
+if you like to see some sample of oauth usage
+read the ./readme/tecnologies-description/oauth
+
+after edit ./projectName-web/src/test/java/br/com/web/sample/OauthSampleApp 
+and ./projectName-web-all/src/test/java/br/com/company/projectname/OauthApp
+change the APP_TOKEN of app 
+Application application = client.getResource("https://api.stormpath.com/v1/applications/APP_TOKEN", Application.class);
+
+change the email and password
+AuthenticationRequest request = new UsernamePasswordRequest("email", "password");
+
+change the projectName-web/src/main/resources/oauth.properties
+change the  APIKEY.ID and APIKEY.SECRET
+
+
+Oauth is not recommend for big applications 
+that has a lot of layer(s) or  
+enterprise resource planning i recommend the use of SAML.
+------------------------------------------------------------------------------

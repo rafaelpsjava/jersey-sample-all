@@ -1,0 +1,60 @@
+Best current java restful providers [
+
+	Jersey {
+		JAX-RS 2.0 does not support injection of EJBs into JAX-RS components (providers, resources).
+		Jersey do not provide ejb support by default;
+		Reference Implementation;
+		Usually the most cutting edge;
+		Supports true asynchronous (ie web sockets etc...) connections through either Atmosphere or 2.0 version.;
+		Has support for Spring and standard injection containers (ie @Inject).;
+		Glassfish bundles it.;
+		Its much more modular than the other JAX-RS projects.;
+		It has a kick ass URI Builder;
+		Does not necessarily require servlet container.;
+		Grizzly support;
+		Netty support (very early).;
+		Swagger support;
+		Sort of missing OAuth 2.0 . You'll have to use other libraries.;
+		Some MVC support through Viewables;
+		Hosted on java.net (a minus as the site is terribly slow at times).;
+		Licensing is based on CCDL 1.1 and GPL-v2. Please make sure you check Jersey licensing before you use it for commercial use;
+	},
+	
+	RestEasy {
+	    Much of the above but most notable supports view technologies (see HTMLEasy);
+	    It does have asynchronous connection support;
+	    Cache support;
+	    EJB support (if your into that crap);
+	    JBoss bundles it (I think);
+	    Netty support;
+	    Arguably the best Spring integration (MVC handler).;
+	    Early Swagger support;
+	    More security support including early OAuth 2.0 support
+	},
+	
+	Restlet {
+	    Very powerful but very complicated;
+	    Provides some low-level REST support;
+	    Does not require a servlet container
+	},
+	
+	Apache CXF {
+	    Some interesting WADL support.;
+	    Reuse and or combine JAX-RS w/ JAX-WS;
+	    Security support;
+	    Integration w/ Spring albeit kind of nasty;
+	    Supposed Autogeneration of client stubs
+	},
+	
+	Other RPC-like systems [
+		Message Queues {
+		    RabbitMQ;
+		    ActiveMQ
+		},
+		Asynchronous RPC {
+		    Finagle -- from Twitter.;
+		    msgpack-rpc
+		}
+	]
+
+]
