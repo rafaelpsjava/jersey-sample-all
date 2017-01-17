@@ -19,9 +19,8 @@ a few instructions of what is necessary to config the oauth
 ## ./tecnologies_used_in_this_project 
 tecnologies and knowleges used in this sample project
 ## ./tutorial/jersey/ejb_lookup
-To use ejb lookup in jersey
+Jersey do not provide ejb lookup by default
 ## About this sample
 Was implemented as easy as possible, there are a lot of tecnologies used and a great content of knowlege envolved ...  <br />
 try make to make a Java Sênior Developer pratical article and you see... the content that i provide is the best.  <br />
 this sample can be utilized as model to implement Jee enterprise web applications using some of best java ee practices <br />
-Jersey do not provide ejb support by default you can implement some class like: `<br />
