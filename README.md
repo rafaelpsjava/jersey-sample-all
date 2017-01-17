@@ -17,7 +17,7 @@ this will give a few descriptions (what they offer) of the best current restful 
 a few instructions of what is necessary to config the oauth 
 ## ./tecnologies_used_in_this_project 
 tecnologies and knowleges used in this sample project
-## ./tutorial/jersey/ejb_lookup
+## ./tutorial/ejb/ejb_lookup
 Jersey do not provide ejb lookup by default
 ## About this sample
 Was implemented as easy as possible, there are a lot of tecnologies used and a great content of knowlege envolved ...  <br />
