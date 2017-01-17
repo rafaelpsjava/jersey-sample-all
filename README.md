@@ -15,19 +15,13 @@ and invoke the ejb method(s) and implement a test case that use a restful client
 
 
 ## Read: 
-./tecnologies-description/multiple-projects <br />
-this ilustrate this project structure <br />
-./tecnologies-description/about-restful-providers <br />
-this will give a few descriptions (what they offer) of the best current restful providers <br />	
-./tecnologies-description/oauth <br />
-this will give a few instructions of what is necessary to config the oauth <br />
-./tecnologies_used_in_this_project <br />
-the names of tecnologies and knowleges used in this sample project, <br />
-this sample was implemented as easy as possible ( <br />
-there are a lot of tecnologies used and a great content of knowlege envolved ... <br />
+./tecnologies-description/multiple-projects (this ilustrate this project structure) <br />
+./tecnologies-description/about-restful-providers (this will give a few descriptions (what they offer) of the best current restful providers)  <br />	
+./tecnologies-description/oauth (this will give a few instructions of what is necessary to config the oauth) <br />
+./tecnologies_used_in_this_project (the names of tecnologies and knowleges used in this sample project) <br />
+this sample was implemented as easy as possible, there are a lot of tecnologies used and a great content of knowlege envolved ...  <br />
 try make to make a Java Sênior Developer pratical article and you see... the content that i provide is the best.  <br />
 this sample can be utilized as model to implement Jee enterprise web applications using some of best java ee practices <br />
-
 Jersey do not provide ejb support by default you can implement some class like: <br />
 
 public class ApplicationConfig extends ResourceConfig { <br />
