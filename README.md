@@ -1,7 +1,6 @@
 ## This is practical tecnical sample article  
 This is skelleton sample of how to architect project layers <br />
-Using: Jax-RS as web service facade <br />
-and on business layer EJB, tests based on restful client api. <br />
+Using: Jax-RS as web service facade and on business layer EJB, tests based on restful client api. <br />
 ## ./readme/tecnologies-description/multiple-projects 
 ilustrate this project structure
 ## ./readme/tecnologies-description/about-restful-providers 
