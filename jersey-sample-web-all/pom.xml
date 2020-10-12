@@ -215,7 +215,7 @@
 		<reflections.version>0.9.10</reflections.version>
 		<java.version>1.7</java.version>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
-		<junit.version>4.11</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
