@@ -218,7 +218,7 @@
 		<!-- change the %JBOSS_PATH with jboss 7.1.1 path -->
 		<jboss.path>%JBOSS_PATH%/jboss-as-7.1.1.Final</jboss.path>
 		<jboss.deploy.directory>${jboss.path}/standalone/deployments</jboss.deploy.directory>
-		<hibernate.version>4.0.1.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 		<mysql.connector.version>5.1.23</mysql.connector.version>
 		<jersey.version>2.5</jersey.version>
 		<slf4j.api.version>1.6.6</slf4j.api.version>
